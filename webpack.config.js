@@ -5,8 +5,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
-const SRC_PATH = path.resolve(__dirname, 'client/src');
-const STATIC_PATH = path.resolve(__dirname, 'client/public');
+const SRC_PATH = path.resolve(__dirname, 'src/client');
+const STATIC_PATH = path.resolve(__dirname, 'public');
 const BUILD_PATH = path.resolve(__dirname, 'dist/static');
 
 
