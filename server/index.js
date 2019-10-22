@@ -1,16 +1,15 @@
 'use strict';
 
-import path from 'path';
 import express from 'express';
+import cors from 'cors';
+import serveStatic from './static';
+import { router } from './api';
 
 
 const app = express();
 
-app.use('/', express.static(path.resolve(__dirname, 'static'), { index: ['index.html'] }));
-
-app.get('/api', (req, res, next) => {
-	res.send('OK');
-});
+app.use('/', serveStatic());
+app.use('/api', cors(), router);
 
 
 app.listen(3000, () => {
