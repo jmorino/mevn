@@ -1,35 +1,31 @@
 <template>
-	<div>
-		<div class="custom">Hello <span>{{name}}</span></div>
-		<div>Server said: {{ response }}</div>
-	</div>
+<v-app>
+	<v-app-bar app dense>
+		<v-toolbar-title class="headline text-uppercase">
+			<span>{{title}}</span>
+			<span class="font-weight-light primary--text">{{subtitle}}</span>
+		</v-toolbar-title>
+	</v-app-bar>
+
+	<v-content>
+		<router-view />
+	</v-content>
+</v-app>
 </template>
 
 
 <script>
+import { mapGetters, mapActions } from 'vuex';
+
 export default {
 	data() { return {
-		name: 'World',
-		response: null,
+		title: 'MEVN',
+		subtitle: 'Boilerplate',
 	}},
-	mounted() {
-		fetch('http://localhost:3000/api')
-			.then(async response => {
-				console.log(response);
-				this.response = (await response.json()).ok;
-			})
-			.catch(err => {
-				console.error(err);
-				this.response = err.message;
-			});
-	}
 }
 </script>
 
 
 <style lang="less" scoped>
-.custom {
-	font-size: 2rem;
-	span { color: red }
-}
+.custom { color: red }
 </style>
