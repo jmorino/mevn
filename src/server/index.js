@@ -1,17 +1,10 @@
 'use strict';
 
-import express from 'express';
-import cors from 'cors';
-import serveStatic from './static';
-import { router } from './api';
+import './env';
+import main from './main';
 
 
-const app = express();
-
-app.use('/', serveStatic());
-app.use('/api', cors(), router);
-
-
-app.listen(3000, () => {
-	console.log('server listening on port 3000...');
+main().catch(err => {
+	console.error(err);
+	process.exit(1);
 });
