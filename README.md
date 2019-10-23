@@ -2,6 +2,8 @@
 
 Project boilerplate for MongoDB/Express/Vue/Node.js app
 
+(see branches for boilerplate variants with some frequently used libraries)
+
 
 ## Installation
 ```
