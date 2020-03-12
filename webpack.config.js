@@ -81,6 +81,8 @@ module.exports = {
 	//
 	devtool: 'inline-source-map',
 	devServer: {
+		host: '0.0.0.0',        // allow connection from remote devices
+		disableHostCheck: true, // allow connection from remote devices
 		open: false,
 		port: 8080,
 		contentBase: BUILD_PATH,
